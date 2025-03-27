@@ -1,0 +1,28 @@
+1. Create a PARAMETER based SELECT QUERY stored procedure which return records based on parameters?
+	- It retrieves all orders associated with a specific customer based on the provided customer ID.
+
+CREATE OR REPLACE PROCEDURE GetOrdersByCustomer(CustomerID IN NUMBER)
+AS
+CURSOR executive IS
+    SELECT *
+    FROM Orders O
+    WHERE O.Customer_ID = CustomerID;
+BEGIN
+FOR v_cursrec IN executive LOOP
+    
+dbms_output.put_line('The customer with this ID: '|| v_cursrec. Customer_ID||' , Has ordered order number: '|| v_cursrec. Order_ID);
+
+END LOOP;
+END GetOrdersByCustomer;
+
+
+2. Create an UPDATE query based stored procedure.
+	- this procedure update the price of certain item.
+
+CREATE PROCEDURE UpdateItemPrice( ITEMNO IN NUMBER, NewPrice IN NUMBER)
+AS
+BEGIN
+    UPDATE Menu_Items
+    SET Price = NewPrice
+    WHERE ITEM_NO = ITEMNO;
+END UpdateItemPrice;

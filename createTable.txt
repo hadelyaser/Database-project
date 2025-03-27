@@ -1,0 +1,63 @@
+CREATE TABLE Employee (
+    Emp_ID NUMBER(10) PRIMARY KEY,
+    Emp_Name VARCHAR2(40),
+    Phone_No VARCHAR2(20),
+    Date_of_hire DATE,
+    Salary DECIMAL(10, 2),
+    Position VARCHAR2(50)
+);
+
+CREATE TABLE Customer (
+    Customer_ID NUMBER(10) PRIMARY KEY,
+    Customer_Name VARCHAR(100),
+    Phone_No VARCHAR(20)
+);
+
+CREATE TABLE Orders (
+    Order_ID NUMBER(10) PRIMARY KEY,
+    Order_Date DATE,
+    Emp_ID NUMBER(10),
+    Customer_ID NUMBER(10),
+    FOREIGN KEY (Emp_ID) REFERENCES Employee(Emp_ID),
+    FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
+);
+
+CREATE TABLE Menu_Items (
+    Item_No NUMBER(10) PRIMARY KEY,
+    Price DECIMAL(10, 2),
+    Description VARCHAR2(100)
+);
+
+CREATE TABLE Orders_Items (
+    Order_ID NUMBER(10),
+    Item_No NUMBER(10),
+    FOREIGN KEY (Order_ID) REFERENCES Orders(Order_ID),
+    FOREIGN KEY (Item_No) REFERENCES Menu_Items(Item_No),
+    PRIMARY KEY (Order_ID, Item_No)
+);
+
+
+
+CREATE TABLE Review (
+    Review_ID NUMBER(10) PRIMARY KEY,
+    Rate NUMBER(3),
+    Suggestions VARCHAR2(100),
+    Customer_ID NUMBER(10),
+    FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID)
+);
+
+CREATE TABLE Table_Info (
+    Table_No NUMBER(10) PRIMARY KEY,
+    Capacity NUMBER(10)
+);
+
+CREATE TABLE Booking (
+    Booking_No NUMBER(10) PRIMARY KEY,
+    Booking_Time VARCHAR2(10),
+    Number_of_guests NUMBER(10),
+    Customer_ID NUMBER(10),
+    Table_No NUMBER(10),
+    FOREIGN KEY (Customer_ID) REFERENCES Customer(Customer_ID),
+    FOREIGN KEY (Table_No) REFERENCES  Table_Info(Table_No)
+);
+

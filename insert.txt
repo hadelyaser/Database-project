@@ -1,0 +1,65 @@
+INSERT INTO Employee 
+VALUES (1, 'Ahmed Saleh', '0578963215', DATE '2023-01-15', 20000.00, 'Manager');
+INSERT INTO Employee 
+VALUES (2, 'Abdulaziz Samer', '966512479836', DATE'2023-02-20', 10000.00, 'Salesperson');
+INSERT INTO Employee 
+VALUES (3, 'Khalid Ahmed', '966532698741', DATE'2023-03-10', 6000.00, 'Accountant');
+INSERT INTO Employee
+VALUES (4, 'Sara Majed', '966574851236',DATE '2023-04-05', 12000.00, 'Engineer');
+INSERT INTO Employee
+VALUES (5, 'Abeer Mohammed', '96651489253',DATE '2023-05-12', 11000.00, 'Analyst');
+
+INSERT INTO Customer
+VALUES (101, 'David Johnson', '96658632175');
+INSERT INTO Customer
+VALUES (102, 'Sarah Miller', '966578963215');
+INSERT INTO Customer
+VALUES (103, 'Chris Brown', '966578236495');
+INSERT INTO Customer
+VALUES (104, 'Emily Davis', '966578963215');
+INSERT INTO Customer
+VALUES (105, 'Olivia Wilson', '966578963214');
+
+
+INSERT INTO Orders  VALUES (1, DATE '2023-11-01', 1, 101);
+INSERT INTO Orders  VALUES (2, DATE '2023-11-05', 2, 102);
+INSERT INTO Orders  VALUES (3, DATE '2023-11-10', 3, 103);
+INSERT INTO Orders  VALUES (4, DATE '2023-11-15', 4, 104);
+INSERT INTO Orders  VALUES (5, DATE '2023-11-20', 5, 105);
+
+INSERT INTO Menu_Items  VALUES (101, 9.99, 'Burger');
+INSERT INTO Menu_Items  VALUES (102, 4.99, 'Fries');
+INSERT INTO Menu_Items  VALUES (103, 14.99, 'Salad');
+INSERT INTO Menu_Items  VALUES (104, 19.99, 'Steak');
+INSERT INTO Menu_Items  VALUES (105, 8.99, 'Pasta');
+
+
+INSERT INTO Orders_Items  VALUES (1, 101);
+INSERT INTO Orders_Items  VALUES (1, 102);
+INSERT INTO Orders_Items  VALUES (2, 103);
+INSERT INTO Orders_Items  VALUES (3, 104);
+INSERT INTO Orders_Items  VALUES (4, 105);
+
+
+INSERT INTO Review  VALUES (1, 4, 'Great service!', 101);
+INSERT INTO Review  VALUES (2, 5, 'Excellent food quality.', 102);
+INSERT INTO Review  VALUES (3, 3, 'Average experience.', 103);
+INSERT INTO Review  VALUES (4, 5, 'Amazing ambiance!', 104);
+INSERT INTO Review  VALUES (5, 4, 'Good value for money.', 105);
+
+INSERT INTO Table_Info  VALUES (1, 4);
+INSERT INTO Table_Info  VALUES (2, 2);
+INSERT INTO Table_Info  VALUES (3, 6);
+INSERT INTO Table_Info  VALUES (4, 3);
+INSERT INTO Table_Info  VALUES (5, 5);
+
+
+
+INSERT INTO Booking VALUES (503, '18:00', 4, 101, 1);
+INSERT INTO Booking VALUES (204, '19:30', 2, 102, 2);
+INSERT INTO Booking VALUES (30, '20:00', 6, 103, 3);
+INSERT INTO Booking VALUES (4, '17:45', 3, 104, 4);
+INSERT INTO Booking VALUES (150, '12:15', 5, 105, 5);
+
+
+

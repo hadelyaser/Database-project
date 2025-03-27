@@ -1,0 +1,40 @@
+1. Get the menu items sorted by their prices in descending order.
+
+SELECT Item_No, Price, Description
+FROM Menu_Items
+ORDER BY Price DESC;
+
+2. Retrieve the count of bookings made by each customer.
+
+SELECT Customer_ID, COUNT(Booking_No) AS TotalBookings
+FROM Booking
+GROUP BY Customer_ID;
+
+3. Retrieve orders with customer names placed within a specific date range.
+
+SELECT Orders.Order_ID, Orders.Order_Date, Customer.Customer_Name
+FROM Orders
+JOIN Customer ON Orders.Customer_ID = Customer.Customer_ID
+WHERE Orders.Order_Date BETWEEN DATE'2023-01-01' AND DATE'2023-11-10'
+ORDER BY Orders.Order_Date DESC;
+
+4. Retrieve customers who have placed orders for Pasta:
+
+SELECT Customer_ID, Customer_Name
+FROM Customer
+WHERE Customer_ID IN (
+    SELECT Customer_ID
+    FROM Orders
+    WHERE Order_ID IN (
+        SELECT Order_ID
+        FROM Orders_Items
+        WHERE Item_No IN (
+            SELECT Item_No
+            FROM Menu_Items
+            WHERE Description = 'Pasta'
+        )
+    )
+);
+
+
+
